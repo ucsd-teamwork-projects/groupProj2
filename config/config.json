@@ -2,14 +2,14 @@
   "development": {
     "username": "root",
     "password": "",
-    "database": "exampledb",
+    "database": "interxtions_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": "",
-    "database": "testdb",
+    "database": "interxtions_db",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
