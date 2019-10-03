@@ -22,8 +22,18 @@ module.exports = function(app) {
     });
   });
   
+  //login page
   app.get("/login", (req, res) => {
     res.render("login", {});
+  });
+
+  //user registration page
+  app.get("/register", (req, res) => {
+    res.render("register", {});
+  });
+
+  app.post("/register", (req, res) => {
+    console.log(req.body)
   });
 
   // Render 404 page for any unmatched routes
