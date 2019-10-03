@@ -23,26 +23,26 @@
 
             <form action="/register" method="POST">
                 <div class="form-group">
-                <label for="firstname">Firstname</label>
+                <label for="firstname">First Name</label>
                 <input
                     type="firstname"
                     id="firstname"
                     name="firstname"
                     class="form-control"
-                    placeholder="Enter Firstname"
+                    placeholder="First Name"
                     {{#if this.firstname}}
                     value={{firstname}}
                     {{/if}}
                 />
                 </div>
                 <div class="form-group">
-                <label for="lastname">Lastname</label>
+                <label for="lastname">Last Name</label>
                 <input
                     type="lastname"
                     id="lastname"
                     name="lastname"
                     class="form-control"
-                    placeholder="Enter Lastname"
+                    placeholder="Last Name"
                     {{#if this.lastname}}
                     value={{lastname}}
                     {{/if}}
@@ -55,7 +55,7 @@
                     id="email"
                     name="email"
                     class="form-control"
-                    placeholder="Enter Email"
+                    placeholder="Email"
                     {{#if this.email}}
                     value={{email}}
                     {{/if}}
