@@ -1,9 +1,9 @@
 require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
-const flash = require("connect-flash");
-const session = require("express-session");
-const passport = require("passport");
+var flash = require("connect-flash");
+var session = require("express-session");
+var passport = require("passport");
 
 var db = require("./models");
 
@@ -19,15 +19,22 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Handlebars
-app.engine("handlebars", exphbs({defaultLayout: "main"}));
+app.engine(
+  "handlebars",
+  exphbs({
+    defaultLayout: "main"
+  })
+);
 app.set("view engine", "handlebars");
 
 // Express Session Middleware
-app.use(session({
-  secret: 'secret',
-  resave: true,
-  saveUninitialized: true
-}));
+app.use(
+  session({
+    secret: "secret",
+    resave: true,
+    saveUninitialized: true
+  })
+);
 
 //Passport Middleware
 app.use(passport.initialize());
@@ -48,7 +55,9 @@ app.use((req, res, next) => {
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
-var syncOptions = { force: false };
+var syncOptions = {
+  force: false
+};
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`

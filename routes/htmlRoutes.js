@@ -1,7 +1,7 @@
-const db = require("../models");
-const bcrypt = require("bcryptjs");
-const passport = require('passport');
-const { ensureAuthenticated } = require("../config/auth");
+var db = require("../models");
+var bcrypt = require("bcryptjs");
+var passport = require("passport");
+var { ensureAuthenticated } = require("../config/auth");
 
 module.exports = function(app) {
   // Load index page
@@ -11,9 +11,9 @@ module.exports = function(app) {
 
   //dashboard page
   app.get("/dashboard", ensureAuthenticated, (req, res) => {
-    res.render("dashboard", {name: req.user.firstname});
+    res.render("dashboard", { name: req.user.firstname });
   });
-  
+
   //login page
   app.get("/login", (req, res) => {
     res.render("login", {});
@@ -26,50 +26,49 @@ module.exports = function(app) {
 
   //registers a new user
   app.post("/register", (req, res) => {
-    const {firstname, lastname, email, password, password2} = req.body;
+    var { firstname, lastname, email, password, password2 } = req.body;
     let errors = [];
 
     //blank field validation
-    if(!firstname || !lastname || !email || !password || !password2) {
-      errors.push({msg: "Please fill in all fields"});
+    if (!firstname || !lastname || !email || !password || !password2) {
+      errors.push({ msg: "Please fill in all fields" });
     }
 
     //password match validation
-    if(password != password2){
-      errors.push({msg: "Passwords do not match"});
+    if (password !== password2) {
+      errors.push({ msg: "Passwords do not match" });
     }
 
     //Check PW length
-    if(password.length < 6){
-      errors.push({msg: "Password should be at least 6 characters"});
+    if (password.length < 6) {
+      errors.push({ msg: "Password should be at least 6 characters" });
     }
 
     //Sends info back when register is re-rendered so that users do not have to re-type
-    if(errors.length > 0) {
+    if (errors.length > 0) {
       res.render("register", {
         errors,
         firstname,
         lastname,
         email
       });
-    }else{
+    } else {
       //Add user to DB
       db.User.findOne({
-        where:{
+        where: {
           email: email
         }
       }).then(user => {
-        console.log(user)
-        if(user) {
-          errors.push({msg: "Email already has registered account"})
+        if (user) {
+          errors.push({ msg: "Email already has registered account" });
           res.render("register", {
             errors,
             firstname,
             lastname,
             email
           });
-        }else{
-          const newUser = new db.User({
+        } else {
+          var newUser = new db.User({
             firstname,
             lastname,
             email,
@@ -77,15 +76,21 @@ module.exports = function(app) {
           });
 
           //user bcrypt to hash PW
-          bcrypt.genSalt(10, (err, salt) => 
+          bcrypt.genSalt(10, (err, salt) =>
             bcrypt.hash(newUser.password, salt, (err, hash) => {
-              if(err) throw err;
+              if (err) {
+                throw err;
+              }
 
               newUser.password = hash;
-              newUser.save()
-                .then(user => {
+              newUser
+                .save()
+                .then(() => {
                   //flash message that are sent when redirected to login
-                  req.flash("success_msg", "You are now registed, Please Login.");
+                  req.flash(
+                    "success_msg",
+                    "You are now registed, Please Login."
+                  );
                   res.redirect("/login");
                 })
                 .catch(err => console.log(err));
@@ -114,5 +119,4 @@ module.exports = function(app) {
   app.get("*", function(req, res) {
     res.render("404");
   });
-
 };
