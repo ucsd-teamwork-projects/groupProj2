@@ -3,23 +3,8 @@
         <div class="card card-body">
             <h1 class="text-center mb-3"><i class="fas fa-user-plus"></i> Register</h1>
 
-            {{#if errors}}
-                {{#each errors}}
-                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                        {{this.msg}}
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-
-                {{/each}}
-            {{/if}}
-
-            {{#if success_msg}}
-                {{#each success_msg}}
-
-                {{/each}}
-            {{/if}}
+            {{!-- Partial for flash messages --}}
+            {{> flashMsgs}}
 
             <form action="/register" method="POST">
                 <div class="form-group">

@@ -19,12 +19,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Handlebars
-app.engine(
-  "handlebars",
-  exphbs({
-    defaultLayout: "main"
-  })
-);
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Express Session Middleware
@@ -45,7 +40,9 @@ app.use(flash());
 
 //Global Vars
 app.use((req, res, next) => {
+  // eslint-disable-next-line camelcase
   res.locals.success_msg = req.flash("success_msg");
+  // eslint-disable-next-line camelcase
   res.locals.error_msg = req.flash("error_msg");
   res.locals.error = req.flash("error");
   next();

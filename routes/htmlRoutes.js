@@ -4,14 +4,25 @@ var passport = require("passport");
 var { ensureAuthenticated } = require("../config/auth");
 
 module.exports = function(app) {
-  // Load index page
+  // Load landing page
   app.get("/", function(req, res) {
     res.render("index");
   });
 
-  //dashboard page
+  //User dashboard page
   app.get("/dashboard", ensureAuthenticated, (req, res) => {
-    res.render("dashboard", { name: req.user.firstname, id: req.user.id });
+    db.Medication.findAll({
+      where: {
+        UserId: req.user.id
+      }
+    }).then(data => {
+      var meds = data;
+      res.render("dashboard", {
+        name: req.user.firstname,
+        id: req.user.id,
+        meds: meds
+      });
+    });
   });
 
   //login page
@@ -101,6 +112,7 @@ module.exports = function(app) {
     }
   });
 
+  //Authenitcates user
   app.post("/login", (req, res, next) => {
     passport.authenticate("local", {
       successRedirect: "/dashboard",
@@ -109,6 +121,7 @@ module.exports = function(app) {
     })(req, res, next);
   });
 
+  //logs out user
   app.get("/logout", (req, res) => {
     req.logout();
     req.flash("success_msg", "You are now logged out");

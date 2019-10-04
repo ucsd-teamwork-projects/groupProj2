@@ -97,3 +97,16 @@ var handleDeleteBtnClick = function() {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+
+$(function() {
+  $(document).on("click", ".delete-med", function() {
+    var id = $(this).attr("data-id");
+    $.ajax({
+      url: "api/del-med/" + id,
+      type: "DELETE"
+    }).then(function() {
+      $("medrow-" + id).remove();
+      location.reload();
+    });
+  });
+});
