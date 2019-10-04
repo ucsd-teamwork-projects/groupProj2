@@ -11,7 +11,7 @@ module.exports = function(app) {
 
   //dashboard page
   app.get("/dashboard", ensureAuthenticated, (req, res) => {
-    res.render("dashboard", { name: req.user.firstname });
+    res.render("dashboard", { name: req.user.firstname, id: req.user.id });
   });
 
   //login page

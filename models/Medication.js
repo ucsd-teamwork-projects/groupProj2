@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
   var Medication = sequelize.define("Medication", {
-    name: DataTypes.STRING,
-    rxNnum: DataTypes.STRING
+    rxName: DataTypes.STRING,
+    rxNum: DataTypes.STRING
   });
 
   Medication.associate = function(models) {
