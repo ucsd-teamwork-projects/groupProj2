@@ -1,3 +1,7 @@
+# macOS and *NIX fileystem exemptions (10-3-19) by Tyler
+._*
+.DS_Store
+
 # Logs
 logs
 *.log
