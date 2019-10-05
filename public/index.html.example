@@ -9,17 +9,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         
         <!-- Slick Carousel -->
-        <link rel="stylesheet" href="plugins/slick/slick.css">
-        <link rel="stylesheet" href="plugins/slick/slick-theme.css">
+        <link rel="stylesheet" href="./plugins/slick/slick.css">
+        <link rel="stylesheet" href="./plugins/slick/slick-theme.css">
         <!-- FancyBox -->
-        <link rel="stylesheet" href="plugins/fancybox/jquery.fancybox.min.css">
+        <link rel="stylesheet" href="./plugins/fancybox/jquery.fancybox.min.css">
         
         <!-- Stylesheets -->
-        <link href="css/style.css" rel="stylesheet">
+        <link href="./css/style.css" rel="stylesheet">
         
         <!--Favicon-->
-        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+        
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+         <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
         </head>
         
         <body>
@@ -29,7 +33,7 @@
             <div class="container clearfix">
                     <div class="logo">
                         <figure>
-                                <a href="index.html">
+                                <a href="./index.html">
                                     <!-- <img src="images/logo.png" alt="" width="130"> -->
                                     <h1>Check Your Pill</h1>
                                 </a>
@@ -292,12 +296,12 @@
             <div class="container clearfix">
             <div class="copyright-text">
                 <p>&copy; Copyright 2019. All Rights Reserved by
-                <a href="index.html">Check Your Pill</a>
+                <a href="./index.html">Check Your Pill</a>
                 </p>
             </div>
             <ul class="footer-bottom-link">
                 <li>
-                <a href="index.html">Home</a>
+                <a href="./index.html">Home</a>
                 </li>
                 <li>
                 <a href="#">About</a>
@@ -319,22 +323,22 @@
         <span class="icon fa fa-angle-up"></span>
         </div>
 
-        <script src="plugins/jquery.js"></script>
-        <script src="plugins/bootstrap.min.js"></script>
-        <script src="plugins/bootstrap-select.min.js"></script>
+        <script src="./plugins/jquery.js"></script>
+        <script src="./plugins/bootstrap.min.js"></script>
+        <script src="./plugins/bootstrap-select.min.js"></script>
         <!-- Slick Slider -->
-        <script src="plugins/slick/slick.min.js"></script>
+        <script src="./plugins/slick/slick.min.js"></script>
         <!-- FancyBox -->
-        <script src="plugins/fancybox/jquery.fancybox.min.js"></script>
+        <script src="./plugins/fancybox/jquery.fancybox.min.js"></script>
         <!-- Google Map -->
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
-        <script src="plugins/google-map/gmap.js"></script>
+        <script src="./plugins/google-map/gmap.js"></script>
 
-        <script src="plugins/validate.js"></script>
-        <script src="plugins/wow.js"></script>
-        <script src="plugins/jquery-ui.js"></script>
-        <script src="plugins/timePicker.js"></script>
-        <script src="js/script.js"></script>
+        <script src="./plugins/validate.js"></script>
+        <script src="./plugins/wow.js"></script>
+        <script src="./plugins/jquery-ui.js"></script>
+        <script src="./plugins/timePicker.js"></script>
+        <script src="./js/script.js"></script>
         </body>
 
     </html>

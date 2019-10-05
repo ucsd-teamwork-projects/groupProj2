@@ -1,20 +1,89 @@
-<div class="container">
+
+
+{{!-- NEW PAGE --}}
+<div class="page-wrapper">
+        <!--Header Upper-->
+        <section class="header-uper">
+            <div class="container clearfix">
+                    <div class="logo">
+                        <figure>
+                                <a href="./index.html">
+                                    <!-- <img src="images/logo.png" alt="" width="130"> -->
+                                    <h1>Check Your Pill</h1>
+                                </a>
+                        </figure>
+                    </div>
+                    <div class="right-side">
+                        <ul class="contact-info">
+                                <li class="item">
+                                    <div class="icon-box">
+                                            <i class="fa fa-envelope-o"></i>
+                                    </div>
+                                    <strong>Email</strong>
+                                    <br>
+                                    <a href="#">
+                                            <span>info@CheckYourPill.com</span>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <div class="icon-box">
+                                            <i class="fa fa-phone"></i>
+                                    </div>
+                                    <strong>Call Now</strong>
+                                    <br>
+                                    <span>+ (858) - 123 - 4567</span>
+                                </li>
+                        </ul>
+                        <div class="link-btn">
+                                <a href="#" class="btn-style-one">Profile</a>
+                        </div>
+                    </div>
+            </div>
+        </section>
+        <!--Header Upper-->
+
+        <!--Main Header-->
+        <nav class="navbar navbar-default">
+            <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                                aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                                <li class="active">
+                                    <a href="index.html">Home</a>
+                                </li>
+                                <li>
+                                    <a href="#">Service</a>
+                                </li>
+                                <li>
+                                    <a href="#">Appointment</a>
+                                </li>
+                                <li>
+                                    <a href="#">Contact</a>
+                                </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+
+<!-- Start of Form -->
     <div class="mt-2">
         {{!-- Partial for flash messages --}}
         {{> flashMsgs}}
     </div>
-
-    <div>
-        <h1 class="mt-4">Dashboard</h1>
-        <p class="lead mb-3">Welcome {{name}}</p>
-        <a href="/logout" class="btn btn-secondary">Logout</a>
-    </div>
-    <hr>
-
-
-
-    {{!-- Form to add medication --}}
-    <form action="/api/add-meds/{{id}}/{{name}}" method="POST">
+    
+    <form id="form2" action="/api/add-meds/{{id}}/{{name}}" method="POST">
         <h2 class="h2">Add Medications</h2>
         <div class="form-group">
             <label for="rxName">Medication Name</label>
@@ -37,13 +106,13 @@
                 placeholder="Rx Number"
             />
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Add</button>
+        <button type="submit" class="btn-style-one">Add</button>
     </form>
 
-    {{!-- Table for displaying medication --}}
-    <br><hr><br>
-    <h2 class="h2">Your current Medications</h2>
-    <table class="table table-striped">
+<!-- End of Form -->
+
+<!-- Start of Table -->
+    <table class="table" id="table2">
     <thead>
         <tr>
         <th scope="col">Name</th>
@@ -62,5 +131,194 @@
     </tbody>
     </table>
 
-    <script src="./js/typeAhead.js"></script>
-</div>
+<!-- End of Table -->
+
+
+        <!-- Contact Section -->
+        <section class="appoinment-section section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="accordion-section">
+            <div class="section-title">
+                <h3>Features:</h3>
+            </div>
+            <div class="accordion-holder">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Analyze your medication
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body">
+                                    The system will analyze and determine if any medications have a negative reaction when used together.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false"
+                                    aria-controls="collapseTwo">
+                                    Designate an emergency contact
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="panel-body">
+                                    Designate an emergency contact that will be notified if there is a possible negative reaction
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false"
+                                    aria-controls="collapseThree">
+                                    Set reminders
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                            <div class="panel-body">
+                                    Users will also be able to effortlessly set reminders to refill and take medication
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="contact-area">
+            <div class="section-title">
+                <h3>User
+                    <span>Profile</span>
+                </h3>
+            </div>
+            <form name="contact_form" class="default-form contact-form" action="sendmail.php" method="post">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Name" required="">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email" required="">
+                        </div>
+                        <div class="form-group">
+                                <input type="text" name="Date" placeholder="Date of Birth" required="" id="datepicker">
+                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                            </div>
+                    </div>
+                    <!-- <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <input type="text" name="Phone" placeholder="Phone" required="">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="Date" placeholder="Date" required="" id="datepicker">
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <textarea name="form_message" placeholder="List Your Current Medications" required=""></textarea>
+                        </div>
+                        <div class="form-group text-center"> -->
+                            <button type="submit" class="btn-style-one">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>                        
+                    </div>
+                </div>                    
+            </div>
+        </section>
+        <!-- End Contact Section -->
+        
+        <section class="cta" id="cta1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="cta-block">
+                            <div class="emmergency item">
+                                <i class="fa fa-phone"></i>
+                                <h2>Emergency Cases</h2>
+                                <a href="#">1-800-700-6200</a>
+                                <p>Toll free phone number.</p>
+                            </div>
+                            <div class="top-doctor item">
+                                <i class="fa fa-stethoscope"></i>
+                                <h2>24 Hour Service</h2>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore dignissimos officia dicta suscipit vel eum</p>
+                                <a href="#" class="btn btn-main">Read more</a>
+                            </div>
+                            <div class="working-time item">
+                                <i class="fa fa-hourglass-o"></i>
+                                <h2>Working Hours</h2>
+                                <ul class="w-hours">
+                                    <li>Mon - Fri  - <span>8:00 - 17:00</span></li>
+                                    <li>Mon - Fri  - <span>8:00 - 17:00</span></li>
+                                    <li>Mon - Fri  - <span>8:00 - 17:00</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--footer-main-->
+        <footer class="footer-main">
+        <div class="footer-bottom">
+            <div class="container clearfix">
+            <div class="copyright-text">
+                <p>&copy; Copyright 2019. All Rights Reserved by
+                <a href="./index.html">Check Your Pill</a>
+                </p>
+            </div>
+            <ul class="footer-bottom-link">
+                <li>
+                <a href="./index.html">Home</a>
+                </li>
+                <li>
+                <a href="#">About</a>
+                </li>
+                <li>
+                <a href="#">Contact</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+        </footer>
+        <!--End footer-main-->
+
+        </div>
+        <!--End pagewrapper-->
+
+        <!--Scroll to top-->
+        <div class="scroll-to-top scroll-to-target" data-target=".header-top">
+        <span class="icon fa fa-angle-up"></span>
+        </div>
+
+        <script src="./plugins/jquery.js"></script>
+        <script src="./plugins/bootstrap.min.js"></script>
+        <script src="./plugins/bootstrap-select.min.js"></script>
+        <!-- Slick Slider -->
+        <script src="./plugins/slick/slick.min.js"></script>
+        <!-- FancyBox -->
+        <script src="./plugins/fancybox/jquery.fancybox.min.js"></script>
+        <!-- Google Map -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+        <script src="./plugins/google-map/gmap.js"></script>
+
+        <script src="./plugins/validate.js"></script>
+        <script src="./plugins/wow.js"></script>
+        <script src="./plugins/jquery-ui.js"></script>
+        <script src="./plugins/timePicker.js"></script>
+        <script src="./js/script.js"></script>
+        <script src="./js/typeAhead.js"></script>
