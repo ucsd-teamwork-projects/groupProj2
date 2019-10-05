@@ -1,25 +1,11 @@
 {
   "development": {
-    "username": "root",
-<<<<<<< Updated upstream
-    "password": "",
     "database": "interxtions_db",
-=======
-    "password": "Shitfuck1!",
-    "database": "exampledb",
->>>>>>> Stashed changes
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-<<<<<<< Updated upstream
-    "password": "",
     "database": "interxtions_db",
-=======
-    "password": "Shitfuck1!",
-    "database": "testdb",
->>>>>>> Stashed changes
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
