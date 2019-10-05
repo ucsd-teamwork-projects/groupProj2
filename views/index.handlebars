@@ -1,34 +1,38 @@
-
 {{!-- Style --}}
 <style>
-   .logo-image{
+  .logo-image {
     width: 46px;
     height: 46px;
     border-radius: 50%;
     overflow: hidden;
     margin-top: -6px;
-}
+  }
 
-{{!-- rgb(52,58,64); --}}
-body{
-  
-  background-color:rgb(54, 172, 250);
-  background-repeat: no-repeat;
-  background-size: 100%;
+    {
+      {
+       !-- rgb(52, 58, 64);
+      --
+    }
+  }
 
-}
-.rounded{
-  float: left;
-}
+  body {
+
+    background-color: rgb(54, 172, 250);
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+  }
+
+  .rounded {
+    float: left;
+  }
 
 
 
-img {
-  border-radius: 50%;
-  
-}
+  img {
+    border-radius: 50%;
 
-
+  }
 </style>
 
 {{!-- nav bar --}}
@@ -36,29 +40,30 @@ img {
   <p class="navbar-brand" href="#">
     <div class="logo-image">
       <img src="/images/logo.jpg" alt="logo" class="img-fluid">
-      </div>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarText">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/login">Login</a>
-      </li>
-      {{!-- <li class="nav-item">
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+        {{!-- <li class="nav-item">
         <g class="nav-link" href="#">Refill Reminder</g>
-      </li>
-      <li class="nav-item">
+        </li>
+        <li class="nav-item">
         <g class="nav-link" href="#">Emergancy Contact</g>
-      </li> --}}
-      <li class="nav-item">
-        <a class="nav-link" href="/register">Register</a>
-      </li>
-    </ul>
-     <span class="navbar-text">
-      <a>Make sure you <u>know</u> what you are taking!</a>
-    </span>
-  </div>
+        </li> --}}
+        <li class="nav-item">
+          <a class="nav-link" href="/register">Register</a>
+        </li>
+      </ul>
+      <span class="navbar-text">
+        <a>Make sure you <u>know</u> what you are taking!</a>
+      </span>
+    </div>
 </nav>
 <br>
 {{!-- ================================================================ --}}
@@ -73,16 +78,20 @@ img {
     </div>
     <div class="card-body">
       <h5 class="card-title">Good to know</h5>
-      <p class="card-text"><b>Daily, medical professionals hand out medication to their patients without check what they are currently on. 
-      The medication you receive from your primary physician could counteract or have the possibility of giving you a higher chance of complication when mixed with other medication prescribed by our therapist or natural home remedies. 
-      Check Your Pill (CYP) is here to ensure your medication is right for you so you can live your beautiful life!</b></p>
+      <p class="card-text"><b>Daily, medical professionals hand out medication to their patients without check what they
+          are currently on.
+          The medication you receive from your primary physician could counteract or have the possibility of giving you
+          a higher chance of complication when mixed with other medication prescribed by our therapist or natural home
+          remedies.
+          Check Your Pill (CYP) is here to ensure your medication is right for you so you can live your beautiful
+          life!</b></p>
 
-  </div>
+    </div>
 
-  <br>
-  
-  {{!-- ======== --}}
-  {{!-- <div class="row">
+    <br>
+
+    {{!-- ======== --}}
+    {{!-- <div class="row">
   <h2>
       <img src="/images/prescription.jpg" height="75px"> 
       <span>Daily, medical professionals hand out medication to their patients without check what they are currently on. 
@@ -90,38 +99,41 @@ img {
       Check Your Pill (CYP) is here to ensure your medication is right for you so you can live your beautiful life!</span>
   </h2>
   </div> --}}
-  <br>
-  {{!-- ================= --}}
-  <br>
-  {{!-- 3 CARD --}}
-  <div class="card-group">
-    <div class="card">
-      <img src="/images/basicPre.jpg" class="card-img-top" alt="pre">
-      <div class="card-body">
-        <h5 class="card-title">Be careful</h5>
-        <h4 class="card-text">Watch what you take. Doctors just give you what they think will work not knowing everything your taking.</h4>
-        
+    <br>
+    {{!-- ================= --}}
+    <br>
+    {{!-- 3 CARD --}}
+    <div class="card-group">
+      <div class="card">
+        <img src="/images/basicPre.jpg" class="card-img-top" alt="pre">
+        <div class="card-body">
+          <h5 class="card-title">Be careful</h5>
+          <h4 class="card-text">Watch what you take. Doctors just give you what they think will work not knowing
+            everything your taking.</h4>
+
+        </div>
+      </div>
+      <div class="card">
+        <img src="/images/weekMeds.jpg" class="card-img-top" alt="weekly meds">
+        <div class="card-body">
+          <h5 class="card-title">Weekly Meds</h5>
+          <h4 class="card-text">What medication are <u>YOU</u> taking. Create an account and see what medication you are
+            taking that can affect your health when mixed</h4>
+        </div>
+      </div>
+      <div class="card">
+        <img src="/images/overLoad.jpg" class="card-img-top" alt="To many" height="250px">
+        <div class="card-body">
+          <h5 class="card-title">To many?</h5>
+          <h4 class="card-text">Look into home remedies. Did you know a mint leaf when eaten will calm and upset
+            stomach?</h4>
+        </div>
       </div>
     </div>
-    <div class="card">
-      <img src="/images/weekMeds.jpg" class="card-img-top" alt="weekly meds">
-      <div class="card-body">
-        <h5 class="card-title">Weekly Meds</h5>
-        <h4 class="card-text">What medication are <u>YOU</u> taking. Create an account and see what medication you are taking that can affect your health when mixed</h4>
-      </div>
-    </div>
-    <div class="card">
-      <img src="/images/overLoad.jpg" class="card-img-top" alt="To many" height="250px">
-      <div class="card-body">
-        <h5 class="card-title">To many?</h5>
-        <h4 class="card-text">Look into home remedies. Did you know a mint leaf when eaten will calm and upset stomach?</h4>
-      </div>
-    </div>
-  </div>
-  {{!-- ================ --}}
-  <br>
-  {{!-- login text --}}
-  {{!-- <div class="row mt-5">
+    {{!-- ================ --}}
+    <br>
+    {{!-- login text --}}
+    {{!-- <div class="row mt-5">
     <div class="col-md-6 m-auto">
       <div class="card card-body text-center">
     
@@ -148,6 +160,4 @@ img {
       </div>
     </div>
   </div> --}}
-</div>
-
-
+  </div>
