@@ -56,7 +56,7 @@ module.exports = function(app) {
       newMed
         .save()
         .then(() => {
-          req.flash("success_msg", rxName + "has been added");
+          req.flash("success_msg", rxName + " has been added");
           res.redirect("/dashboard");
         })
         .catch(err => console.log(err));
