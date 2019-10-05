@@ -117,7 +117,7 @@
 //     matches = [];
 //   }
 
-//   outputHtml(meds.idGroup.name, matches);  
+//   outputHtml(meds.idGroup.name, matches);
 // };
 
 // const outputHtml = (name, matches) => {
@@ -129,7 +129,7 @@
 //         <small>Rx: ${match}</small>
 //       </div>
 //     `).join("");
-    
+
 //     matchlist.innerHTML = html;
 //   }
 // }
