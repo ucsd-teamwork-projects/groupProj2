@@ -1,5 +1,5 @@
 <div class="container">
-    <div>
+    <div class="mt-2">
         {{!-- Partial for flash messages --}}
         {{> flashMsgs}}
     </div>
@@ -90,7 +90,7 @@
         if(matches.length > 0) {
             var upperName = name.toUpperCase();
             const html = matches.map(match => `
-            <div data-rxNum="${match}" class="card card-body mb-4 medResult">
+            <div data-rxNum="${match}" data-rxName="${upperName}" class="card card-body mb-4 medResult">
                 <h4>${upperName}</h4>
                 <small>Rx: ${match}</small>
             </div>

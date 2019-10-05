@@ -37,29 +37,34 @@ module.exports = function(app) {
   //Add Medication to DB
   app.post("/api/add-meds/:id/:name", ensureAuthenticated, (req, res) => {
     var { rxNum, rxName } = req.body;
-    let errors = [];
+    let error = "";
 
     if (!rxNum || !rxName) {
-      errors.push({ msg: "Please fill in all fields" });
-    }
-
-    if (errors.length > 0) {
-      req.flash("error_msg", rxName + "Please input all Medication Info");
+      error = "Please fill in all fields";
+      req.flash("error_msg", error);
       res.redirect("/dashboard");
-    } else {
-      var newMed = new db.Medication({
-        rxName,
-        rxNum,
-        UserId: req.params.id
-      });
-
-      newMed
-        .save()
-        .then(() => {
-          req.flash("success_msg", rxName + " has been added");
-          res.redirect("/dashboard");
-        })
-        .catch(err => console.log(err));
     }
+
+    db.Medication.findOne({ where: { rxNum } }).then(med => {
+      if (med) {
+        error = "You already have that medication listed";
+        req.flash("error_msg", error);
+        res.redirect("/dashboard");
+      } else {
+        var newMed = new db.Medication({
+          rxName,
+          rxNum,
+          UserId: req.params.id
+        });
+
+        newMed
+          .save()
+          .then(() => {
+            req.flash("success_msg", rxName + " has been added");
+            res.redirect("/dashboard");
+          })
+          .catch(err => console.log(err));
+      }
+    });
   });
 };

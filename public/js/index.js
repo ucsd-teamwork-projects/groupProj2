@@ -138,6 +138,7 @@
 
 $(function() {
   $(document).on("click", ".medResult", function() {
+    $("#rxName").val($(this).attr("data-rxName"));
     $("#rxNum").val($(this).attr("data-rxNum"));
     $("#matchlist").empty();
   });
