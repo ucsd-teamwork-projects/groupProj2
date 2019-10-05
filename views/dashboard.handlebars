@@ -1,65 +1,105 @@
-<div>
-    {{!-- Partial for flash messages --}}
-    {{> flashMsgs}}
-</div>
-
-<div>
-    <h1 class="mt-4">Dashboard</h1>
-    <p class="lead mb-3">Welcome {{name}}</p>
-    <a href="/logout" class="btn btn-secondary">Logout</a>
-</div>
-<hr>
-
-
-
-{{!-- Form to add medication --}}
-<form action="/api/add-meds/{{id}}/{{name}}" method="POST">
-    <h2 class="h2">Add Medications</h2>
-    <div class="form-group">
-        <label for="rxName">Medication Name</label>
-        <input
-            type="rxName"
-            id="rxName"
-            name="rxName"
-            class="form-control"
-            placeholder="Medication Name"
-        />
+<div class="container">
+    <div>
+        {{!-- Partial for flash messages --}}
+        {{> flashMsgs}}
     </div>
-    <div class="form-group">
-        <label for="rxNum">Medication Rx Number</label>
-        <input
-            type="rxNum"
-            id="rxNum"
-            name="rxNum"
-            class="form-control"
-            placeholder="Rx Number"
-        />
-    </div>
-    <button type="submit" class="btn btn-primary btn-block">Add</button>
-</form>
 
-{{!-- Table for displaying medication --}}
-<br><hr><br>
-<h2 class="h2">Your current Medications</h2>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Rx Number</th>
-      <th scope="col">Delete</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each meds}}
-        <tr id="medrow-{{this.id}}"">
-            <td>{{this.rxName}}</td>
-            <td>{{this.rxNum}}</td>
-            <td><button data-id={{this.id}} class="btn btn-danger delete-med">Delete</button></td>
+    <div>
+        <h1 class="mt-4">Dashboard</h1>
+        <p class="lead mb-3">Welcome {{name}}</p>
+        <a href="/logout" class="btn btn-secondary">Logout</a>
+    </div>
+    <hr>
+
+
+
+    {{!-- Form to add medication --}}
+    <form action="/api/add-meds/{{id}}/{{name}}" method="POST">
+        <h2 class="h2">Add Medications</h2>
+        <div class="form-group">
+            <label for="rxName">Medication Name</label>
+            <input
+                type="rxName"
+                id="rxName"
+                name="rxName"
+                class="form-control"
+                placeholder="Medication Name"
+            />
+            <div id="matchlist"></div>
+        </div>
+        <div class="form-group">
+            <label for="rxNum">Medication Rx Number</label>
+            <input
+                type="rxNum"
+                id="rxNum"
+                name="rxNum"
+                class="form-control"
+                placeholder="Rx Number"
+            />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Add</button>
+    </form>
+
+    {{!-- Table for displaying medication --}}
+    <br><hr><br>
+    <h2 class="h2">Your current Medications</h2>
+    <table class="table table-striped">
+    <thead>
+        <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Rx Number</th>
+        <th scope="col">Delete</th>
         </tr>
-    {{/each}}
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+        {{#each meds}}
+            <tr id="medrow-{{this.id}}">
+                <td>{{this.rxName}}</td>
+                <td>{{this.rxNum}}</td>
+                <td><button data-id={{this.id}} class="btn btn-danger delete-med">Delete</button></td>
+            </tr>
+        {{/each}}
+    </tbody>
+    </table>
 
-{{!-- <script>
-        sessionStorage.setItem("userid", {{id}})
-</script> --}}
+    <script>
+        //Performs logic for type ahead search of drug name
+        const search = document.getElementById("rxName");
+        const matchlist = document.getElementById("matchlist");
+
+        const searchMeds = async searchText => {
+        const res = await fetch("https://rxnav.nlm.nih.gov/REST/rxcui.json?name="+searchText.toLowerCase());
+        const meds = await res.json();
+
+        let matches = [];
+
+        if (meds.idGroup.rxnormId) {
+            meds.idGroup.rxnormId.forEach(element => {
+            matches.push(element);
+            });
+        }
+
+        if (searchText.length ===0) {
+            matches = [];
+        }
+
+        outputHtml(meds.idGroup.name, matches);  
+        };
+
+        const outputHtml = (name, matches) => {
+        if(matches.length > 0) {
+            var upperName = name.toUpperCase();
+            const html = matches.map(match => `
+            <div data-rxNum="${match}" class="card card-body mb-4 medResult">
+                <h4>${upperName}</h4>
+                <small>Rx: ${match}</small>
+            </div>
+            `).join("");
+            
+            matchlist.innerHTML = html;
+        }
+        }
+
+        search.addEventListener("input", () => searchMeds(search.value));
+    </script>
+</div>

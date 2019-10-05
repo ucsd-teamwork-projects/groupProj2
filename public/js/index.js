@@ -98,7 +98,50 @@
 // $submitBtn.on("click", handleFormSubmit);
 // $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
+// const search = document.getElementById("rxName");
+// const matchlist = document.getElementById("matchlist");
+
+// const searchMeds = async searchText => {
+//   const res = await fetch("https://rxnav.nlm.nih.gov/REST/rxcui.json?name="+searchText.toLowerCase());
+//   const meds = await res.json();
+
+//   let matches = [];
+
+//   if (meds.idGroup.rxnormId) {
+//     meds.idGroup.rxnormId.forEach(element => {
+//       matches.push(element);
+//     });
+//   }
+
+//   if (searchText.length ===0) {
+//     matches = [];
+//   }
+
+//   outputHtml(meds.idGroup.name, matches);  
+// };
+
+// const outputHtml = (name, matches) => {
+//   if(matches.length > 0) {
+//     var upperName = name.toUpperCase();
+//     const html = matches.map(match => `
+//       <div data-rxNum="${match}" class="card card-body mb-4 medResult">
+//         <h4>${upperName}</h4>
+//         <small>Rx: ${match}</small>
+//       </div>
+//     `).join("");
+    
+//     matchlist.innerHTML = html;
+//   }
+// }
+
+// search.addEventListener("input", () => searchMeds(search.value));
+
 $(function() {
+  $(document).on("click", ".medResult", function() {
+    $("#rxNum").val($(this).attr("data-rxNum"));
+    $("#matchlist").empty();
+  });
+
   $(document).on("click", ".delete-med", function() {
     var id = $(this).attr("data-id");
     $.ajax({
