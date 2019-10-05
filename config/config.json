@@ -1,14 +1,10 @@
 {
   "development": {
-    "username": "root",
-    "password": "",
     "database": "interxtions_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": "",
     "database": "interxtions_db",
     "host": "localhost",
     "dialect": "mysql",
