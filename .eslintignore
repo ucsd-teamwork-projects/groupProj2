@@ -1,3 +1,5 @@
 models/index.js
 node_modules
-public/plugins
+public/js/jquery.easing.min.js
+public/js/scrolling-nav.js
+~temp
