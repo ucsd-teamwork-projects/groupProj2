@@ -56,7 +56,8 @@
                             <label for="rxNum">Medication Rx Number</label>
                             <input type="rxNum" id="rxNum" name="rxNum" class="form-control" placeholder="Rx Number" />
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-plus-circle"></i> Add</button>
+                        <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-plus-circle"></i>
+                            Add</button>
                     </form>
                 </div>
             </div>
@@ -82,7 +83,8 @@
                             <tr id="medrow-{{this.id}}">
                                 <td><i class="fas fa-pills"></i> {{this.rxName}}</td>
                                 <td><i class="fas fa-prescription"></i> {{this.rxNum}}</td>
-                                <td><button data-id={{this.id}} class="btn btn-primary delete-med"><i class="far fa-trash-alt"></i>    Delete</button></td>
+                                <td><button data-id={{this.id}} class="btn btn-primary delete-med"><i
+                                            class="far fa-trash-alt"></i> Delete</button></td>
                             </tr>
                             {{/each}}
                         </tbody>
@@ -97,7 +99,35 @@
             <div class="row">
                 <div class="col-lg-10 mx-auto">
                     <h2>Your Med InteRxtions</h2>
-
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action list-group-item-success">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1"><span class="badge badge-pill badge-secondary p-2">Drug 1<i class="fas fa-plus-circle mx-2"></i>Drug 2</span></h5>
+                                <strong>Severity: <span class="badge badge-pill badge-danger mx-1 p-2">High</span></strong>
+                            </div>
+                            <p class="my-1">This is where the description of the interaction would go. Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+                                risus varius blandit.</p>
+                            <small>Recommendations: Use condoms!</small>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action list-group-item-success">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1"><span class="badge badge-pill badge-secondary p-2">Drug 1<i class="fas fa-plus-circle mx-2"></i>Drug 2</span></h5>
+                                <strong>Severity: <span class="badge badge-pill badge-warning mx-1 p-2">Moderate</span></strong>
+                            </div>
+                            <p class="my-1">This is where the description of the interaction would go. Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+                                risus varius blandit.</p>
+                            <small>Recommendations: Use condoms!</small>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action list-group-item-success">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1"><span class="badge badge-pill badge-secondary p-2">Drug 1<i class="fas fa-plus-circle mx-2"></i>Drug 2</span></h5>
+                                <strong>Severity: <span class="badge badge-pill badge-info mx-1 p-2">Low</span></strong>
+                            </div>
+                            <p class="my-1">This is where the description of the interaction would go. Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+                                risus varius blandit.</p>
+                            <small>Recommendations: Use condoms!</small>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
