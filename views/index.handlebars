@@ -1,6 +1,6 @@
 {{!-- Style --}}
 <style>
-  .logo-image {
+  #logo-image {
     width: 46px;
     height: 46px;
     border-radius: 50%;
@@ -8,56 +8,30 @@
     margin-top: -6px;
   }
 
-    {
-      {
-       !-- rgb(52, 58, 64);
-      --
-    }
-  }
-
-  body {
-
+  Body {
     background-color: rgb(54, 172, 250);
     background-repeat: no-repeat;
     background-size: 100%;
-
   }
-
-  .rounded {
-    float: left;
-  }
-
-
-
- 
 </style>
 
-{{!-- nav bar --}}
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+{{!-- NAV --}}
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container">
-    <div class="logo-image">
+    <div id="logo-image">
       <img src="/images/logo.jpg" alt="logo" class="img-fluid rounded-circle">
     </div>
-    {{!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon">dsfasdf</span>
-    </button> --}}
-    <div  class="mr-auto">
+    
+    <div class="mr-auto ml-2">
       <span class="navbar-text">
-        <a>Make sure you <u>know</u> what you are taking!</a>
+        <a>Make sure you <strong><u>know</u></strong> what you are taking!</a>
       </span>
     </div>
-    <div> {{!-- class="collapse navbar-collapse" id="navbarText"> --}}
+    <div>
       <ul class="navbar-nav">
         <li class="nav-item active">
           <a class="nav-link" href="/login">Login</a></button>
         </li>
-        {{!-- <li class="nav-item">
-        <g class="nav-link" href="#">Refill Reminder</g>
-        </li>
-        <li class="nav-item">
-        <g class="nav-link" href="#">Emergancy Contact</g>
-        </li> --}}
         <li class="nav-item">
           <a class="nav-link" href="/register">Register</a>
         </li>
@@ -66,92 +40,60 @@
   </div>
 </nav>
 <br>
-{{!-- ================================================================ --}}
 <br>
-{{!-- image with info --}}
 
 <div class="container">
-
   <div class="card text-center">
+    {{!-- Head Photo --}}
     <div class="card-header">
       <img src="/images/prescription.jpg" width="200" height="150px" style="border-radius: 50%">
     </div>
 
+    {{!-- Main Info --}}
     <div class="card-body">
       <h3 class="card-title">Good to know</h3>
-      <p class="card-text"><b>Daily, medical professionals hand out medication to their patients without check what they
-          are currently on.
-          The medication you receive from your primary physician could counteract or have the possibility of giving you
-          a higher chance of complication when mixed with other medication prescribed by our therapist or natural home
-          remedies.
-          Check Your Pill (CYP) is here to ensure your medication is right for you so you can live your beautiful
-          life!</b></p>
-
+      <p class="card-text">Daily, medical professionals hand out medication to their patients without check what they
+        are currently on.
+        The medication you receive from your primary physician could counteract or have the possibility of giving you
+        a higher chance of complication when mixed with other medication prescribed by our therapist or natural home
+        remedies.
+        Check Your Pill (CYP) is here to ensure your medication is right for you so you can live your beautiful
+        life!</p>
     </div>
-
-    
     <br>
-    {{!-- 3 CARD --}}
+    
+    {{!-- 3 Card Info --}}
     <div class="card-group">
       <div class="card col-4">
         <div class="card-body">
-          <img src="/images/basicPre.jpg" class="card-img-top" alt="pre">
+          <img src="/images/basicPre.jpg" class="card-img-top" alt="pre" style="height: 197px">
         </div>
         <div class="card-footer">
           <h5 class="card-title">Be careful</h5>
-          <h4 class="card-text">Watch what you take. Doctors just give you what they think will work not knowing
-            everything your taking.</h4>
+          <p class="card-text">Watch what you take. Doctors just give you what they think will work not knowing
+            everything your taking.</p>
         </div>
       </div>
       <div class="card col-4">
         <div class="card-body">
-          <img src="/images/weekMeds.jpg" class="card-img-top" alt="weekly meds">
+          <img src="/images/weekMeds.jpg" class="card-img-top" alt="weekly meds" style="height: 197px">
         </div>
         <div class="card-footer">
           <h5 class="card-title">Weekly Meds</h5>
-          <h4 class="card-text">What medication are <u>YOU</u> taking. Create an account and see what medication you are
-            taking that can affect your health when mixed</h4>
+          <p class="card-text">What medication are <u>YOU</u> taking. Create an account and see what medication you are
+            taking that can affect your health when mixed</p>
         </div>
       </div>
       <div class="card col-4">
         <div class="card-body">
-          <img src="/images/overLoad.jpg" class="card-img-top" alt="To many" height="250px">
+          <img src="/images/overLoad.jpg" class="card-img-top" alt="To many" style="height: 197px">
         </div>
         <div class="card-footer">
           <h5 class="card-title">To many?</h5>
-          <h4 class="card-text">Look into home remedies. Did you know a mint leaf when eaten will calm and upset
-            stomach?</h4>
+          <p class="card-text">Look into home remedies. Did you know a mint leaf when eaten will calm and upset
+            stomach?</p>
         </div>
       </div>
     </div>
-    {{!-- ================ --}}
     <br>
-    {{!-- login text --}}
-    {{!-- <div class="row mt-5">
-    <div class="col-md-6 m-auto">
-      <div class="card card-body text-center">
-    
-        <img src="/images/logo2.jpg" alt="logo"width="50" height="50">
-        <p>Create an account or login</p>
-        
-        <a href="/register" class="btn btn-primary btn-block mb-2"
-          >Register</a
-        >
-        <a href="/login" class="btn btn-secondary btn-block">Login</a>
-
-  <div class="container">
-    <div class="row mt-5">
-      <div class="col-md-6 m-auto">
-        <div class="card card-body text-center">
-          <h1><i class="fas fa-capsules fa-3x"></i></h1>
-          <p>Create an account or login</p>
-          <a href="/register" class="btn btn-primary btn-block mb-2"
-            >Register</a
-          >
-          <a href="/login" class="btn btn-secondary btn-block">Login</a>
-        </div>
-
-      </div>
-    </div>
-  </div> --}}
   </div>
