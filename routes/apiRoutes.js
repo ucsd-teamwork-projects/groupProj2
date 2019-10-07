@@ -2,29 +2,6 @@ var db = require("../models");
 var { ensureAuthenticated } = require("../config/auth");
 
 module.exports = function(app) {
-  // // Get all examples
-  // app.get("/api/examples", function(req, res) {
-  //   db.Example.findAll({}).then(function(dbExamples) {
-  //     res.json(dbExamples);
-  //   });
-  // });
-
-  // // Create a new example
-  // app.post("/api/examples", function(req, res) {
-  //   db.Example.create(req.body).then(function(dbExample) {
-  //     res.json(dbExample);
-  //   });
-  // });
-
-  // // Delete an example by id
-  // app.delete("/api/examples/:id/:name", function(req, res) {
-  //   db.Example.destroy({ where: { id: req.params.id } }).then(function(
-  //     dbExample
-  //   ) {
-  //     res.json(dbExample);
-  //   });
-  // });
-
   //Delete Medication form DB
   app.delete("/api/del-med/:id", (req, res) => {
     var id = req.params.id;
@@ -45,7 +22,12 @@ module.exports = function(app) {
       res.redirect("/dashboard");
     }
 
-    db.Medication.findOne({ where: { rxNum } }).then(med => {
+    db.Medication.findOne({
+      where: {
+        rxNum,
+        UserId: req.params.id
+      }
+    }).then(med => {
       if (med) {
         error = "You already have that medication listed";
         req.flash("error_msg", error);
