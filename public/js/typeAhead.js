@@ -43,10 +43,12 @@ const outputHtml = matches => {
       .map(
         match => `
         <div class="card-group">
-        <div data-rxNum="${match.rxcui}" data-rxName="${match.name}" class="card card-body p-1 mb-1 medResult">
-            <h5>${match.name}</h4>
-            <small>Rx: ${match.rxcui}</small>
-        </div>
+          <a style="width: 80%">
+          <div data-rxNum="${match.rxcui}" data-rxName="${match.name}" class="card card-body p-1 mb-1 medResult">
+              <h5>${match.name}</h4>
+              <small>Rx: ${match.rxcui}</small>
+          </div>
+          </a>
         </div>
         `
       )
