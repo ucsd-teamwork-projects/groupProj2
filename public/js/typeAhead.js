@@ -10,8 +10,6 @@ const searchMeds = async searchText => {
   );
   const meds = await res.json();
 
-  console.log(meds)
-
   let matches = [];
 
   //if a rxNum is found, add value results
