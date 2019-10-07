@@ -141,6 +141,7 @@ $(function() {
     $("#rxName").val($(this).attr("data-rxName"));
     $("#rxNum").val($(this).attr("data-rxNum"));
     $("#matchlist").empty();
+    $("html, body").animate({ scrollTop: 0 }, "fast");
   });
 
   $(document).on("click", ".delete-med", function() {

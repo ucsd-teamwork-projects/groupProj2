@@ -27,7 +27,8 @@ const searchMeds = async searchText => {
   }
 
   //if no rxNum is found empty array
-  if (searchText.length === 0) {
+  if (searchText.length === 0 || matches.length === 0) {
+    matchlist.innerHTML = "";
     matches = [];
   }
 
