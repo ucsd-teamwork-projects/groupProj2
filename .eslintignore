@@ -3,3 +3,4 @@ node_modules
 public/js/jquery.easing.min.js
 public/js/scrolling-nav.js
 ~temp
+test

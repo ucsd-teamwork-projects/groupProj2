@@ -3,7 +3,7 @@ var { ensureAuthenticated } = require("../config/auth");
 
 module.exports = function(app) {
   //Delete Medication form DB
-  app.delete("/api/del-med/:id", (req, res) => {
+  app.delete("/api/del-med/:id", ensureAuthenticated, (req, res) => {
     var id = req.params.id;
 
     db.Medication.destroy({ where: { id } }).then(data => {

@@ -153,4 +153,13 @@ $(function() {
       location.reload();
     });
   });
+
+  // $(document).on("click", ".rxNum", function() {
+  //   var rxNum = $(this).attr("data-rx");
+  //   console.log(rxNum)
+  //   var url = `https://rxnav.nlm.nih.gov/REST/RxTerms/rxcui/${rxNum}/allinfo.json`;
+  //   $.get(url, function(data) {
+  //     console.log(data)
+  //   })
+  // });
 });

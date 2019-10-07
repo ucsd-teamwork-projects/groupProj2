@@ -6,16 +6,23 @@ const matchlist = document.getElementById("matchlist");
 const searchMeds = async searchText => {
   //api fetch to search meds based on user input
   const res = await fetch(
-    "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=" + searchText.toLowerCase()
+    //"https://rxnav.nlm.nih.gov/REST/rxcui.json?name=" + searchText.toLowerCase()
+    "https://rxnav.nlm.nih.gov/REST/drugs.json?name=" + searchText.toLowerCase()
   );
   const meds = await res.json();
 
   let matches = [];
 
   //if a rxNum is found, add value results
-  if (meds.idGroup.rxnormId) {
-    meds.idGroup.rxnormId.forEach(element => {
-      matches.push(element);
+  if (meds.drugGroup.hasOwnProperty("conceptGroup")) {
+    console.log(meds);
+    meds.drugGroup.conceptGroup.forEach(cg => {
+      if (cg.hasOwnProperty("conceptProperties")) {
+        //if (meds.drugGroup.conceptGroup[1].conceptProperties[0].rxcui) {
+        cg.conceptProperties.forEach(element => {
+          matches.push(element);
+        });
+      }
     });
   }
 
@@ -25,19 +32,20 @@ const searchMeds = async searchText => {
   }
 
   //Display matches to user
-  outputHtml(meds.idGroup.name, matches);
+  outputHtml(matches);
 };
 
 //creates the HTML to display list of matching medications names
-const outputHtml = (name, matches) => {
+const outputHtml = matches => {
   if (matches.length > 0) {
-    var upperName = name.toUpperCase();
     const html = matches
       .map(
         match => `
-        <div data-rxNum="${match}" data-rxName="${upperName}" class="card card-body mb-4 medResult">
-            <h4>${upperName}</h4>
-            <small>Rx: ${match}</small>
+        <div class="card-group">
+        <div data-rxNum="${match.rxcui}" data-rxName="${match.name}" class="card card-body p-1 mb-1 medResult">
+            <h5>${match.name}</h4>
+            <small>Rx: ${match.rxcui}</small>
+        </div>
         </div>
         `
       )

@@ -82,9 +82,10 @@
                             {{#each meds}}
                             <tr id="medrow-{{this.id}}">
                                 <td><i class="fas fa-pills"></i> {{this.rxName}}</td>
-                                <td><i class="fas fa-prescription"></i> {{this.rxNum}}</td>
-                                <td><button data-id={{this.id}} class="btn btn-primary delete-med"><i
-                                            class="far fa-trash-alt"></i> Delete</button></td>
+                                <td class="rxNum"><i class="fas fa-prescription mr-1"></i>{{this.rxNum}}</td>
+                                <td><button data-id={{this.id}} class="btn btn-secondary delete-med">
+                                    <iclass="far fa-trash-alt"></i> Delete</button>
+                                </td>
                             </tr>
                             {{/each}}
                         </tbody>
@@ -149,11 +150,5 @@
 
 
 </div>
-
-<!-- Plugin JavaScript -->
-<script src="./js/jquery.easing.min.js"></script>
-
-<!-- Custom JavaScript for this theme -->
-<script src="./js/scrolling-nav.js"></script>
 
 <script src="./js/typeAhead.js"></script>
