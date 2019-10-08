@@ -1,6 +1,7 @@
 var db = require("../models");
 var bcrypt = require("bcryptjs");
 var passport = require("passport");
+var axios = require("axios");
 var { ensureAuthenticated } = require("../config/auth");
 
 module.exports = function(app) {
@@ -17,11 +18,29 @@ module.exports = function(app) {
       }
     }).then(data => {
       var meds = data;
-      res.render("dashboard", {
-        name: req.user.firstname,
-        id: req.user.id,
-        meds: meds
+      var rxcuis = "";
+
+      meds.forEach((med, i) => {
+        if (meds.length === i + 1) {
+          rxcuis = `${rxcuis} + ${med.rxNum}`;
+        } else {
+          rxcuis = `${rxcuis} + ${med.rxNum} + `;
+        }
       });
+
+      axios
+        .get(
+          `https://rxnav.nlm.nih.gov/REST/interaction/list.json?rxcuis=${rxcuis}`
+        )
+        .then(response => {
+          res.render("dashboard", {
+            name: req.user.firstname,
+            id: req.user.id,
+            meds: meds,
+            interxtionTypes:
+              response.data.fullInteractionTypeGroup[0].fullInteractionType
+          });
+        });
     });
   });
 
