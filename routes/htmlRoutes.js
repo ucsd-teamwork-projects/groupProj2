@@ -33,13 +33,26 @@ module.exports = function(app) {
           `https://rxnav.nlm.nih.gov/REST/interaction/list.json?rxcuis=${rxcuis}`
         )
         .then(response => {
-          res.render("dashboard", {
-            name: req.user.firstname,
-            id: req.user.id,
-            meds: meds,
-            interxtionTypes:
-              response.data.fullInteractionTypeGroup[0].fullInteractionType
-          });
+          if ("fullInteractionTypeGroup" in response.data) {
+            res.render("dashboard", {
+              name: req.user.firstname,
+              id: req.user.id,
+              meds: meds,
+              interxtionTypes:
+                response.data.fullInteractionTypeGroup[0].fullInteractionType
+            });
+          } else {
+            res.render("dashboard", {
+              name: req.user.firstname,
+              id: req.user.id,
+              meds: meds
+            });
+          }
+        })
+        .catch(err => {
+          if (err) {
+            throw err;
+          }
         });
     });
   });
