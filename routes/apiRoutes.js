@@ -20,33 +20,33 @@ module.exports = function(app) {
       error = "Please fill in all fields";
       req.flash("error_msg", error);
       res.redirect("/dashboard");
-    }
-
-    db.Medication.findOne({
-      where: {
-        rxNum,
-        UserId: req.params.id
-      }
-    }).then(med => {
-      if (med) {
-        error = "You already have that medication listed";
-        req.flash("error_msg", error);
-        res.redirect("/dashboard");
-      } else {
-        var newMed = new db.Medication({
-          rxName,
+    } else {
+      db.Medication.findOne({
+        where: {
           rxNum,
           UserId: req.params.id
-        });
+        }
+      }).then(med => {
+        if (med) {
+          error = "You already have that medication listed";
+          req.flash("error_msg", error);
+          res.redirect("/dashboard");
+        } else {
+          var newMed = new db.Medication({
+            rxName,
+            rxNum,
+            UserId: req.params.id
+          });
 
-        newMed
-          .save()
-          .then(() => {
-            req.flash("success_msg", rxName + " has been added");
-            res.redirect("/dashboard");
-          })
-          .catch(err => console.log(err));
-      }
-    });
+          newMed
+            .save()
+            .then(() => {
+              req.flash("success_msg", rxName + " has been added");
+              res.redirect("/dashboard");
+            })
+            .catch(err => console.log(err));
+        }
+      });
+    }
   });
 };
