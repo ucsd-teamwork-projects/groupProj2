@@ -83,7 +83,7 @@
                             <tr id="medrow-{{this.id}}">
                                 <td><i class="fas fa-pills"></i> {{this.rxName}}</td>
                                 <td>
-                                    <button class="rxNum btn btn-primary" style="width: 100px" data-rx={{this.rxNum}} data-toggle="modal" data-target="#medInfoModal">
+                                    <button class="rxNum btn btn-primary" style="width: 120px" data-rx={{this.rxNum}} data-toggle="modal" data-target="#medInfoModal">
                                         <i class="fas fa-prescription mr-1"></i>{{this.rxNum}}
                                     </button>
                                 </td>
@@ -128,8 +128,12 @@
                         {{#if interxtionTypes}}
                         {{#each interxtionTypes}}
                         <div href="#" class="list-group-item list-group-item-action list-group-item-success">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1"><span class="badge badge-pill badge-secondary p-2">{{this.minConcept.[0].name}}<i class="fas fa-plus-circle mx-2"></i>{{this.minConcept.[1].name}}</span></h5>
+                            <div class="d-flex w-100 justify-content-between bg-secondary p-2 text-white rounded-lg">
+                                <h5 class="mb-1">
+                                    {{!-- <span class="badge badge-pill badge-secondary p-2"> --}}
+                                        {{this.minConcept.[0].name}}<i class="fas fa-plus-circle mx-2"></i>{{this.minConcept.[1].name}}
+                                    {{!-- </span> --}}
+                                </h5>
                             </div>
                             <p class="my-1 px-2">{{this.interactionPair.[0].description}}</p>
                             <p class="px-2"><strong>Severity: </strong><span class="badge badge-pill badge-danger mx-1 p-2">N/A</span></p>

@@ -12,6 +12,7 @@ module.exports = function(app) {
 
   // Load User dashboard page
   app.get("/dashboard", ensureAuthenticated, (req, res) => {
+    //Gets all User's meds and renders them to the page
     db.Medication.findAll({
       where: {
         UserId: req.user.id
