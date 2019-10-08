@@ -10,7 +10,7 @@ module.exports = function(app) {
     res.render("index");
   });
 
-  //User dashboard page
+  // Load User dashboard page
   app.get("/dashboard", ensureAuthenticated, (req, res) => {
     db.Medication.findAll({
       where: {
@@ -57,17 +57,17 @@ module.exports = function(app) {
     });
   });
 
-  //login page
+  // Loads login page
   app.get("/login", (req, res) => {
     res.render("login", {});
   });
 
-  //user registration page
+  // Loads user registration page
   app.get("/register", (req, res) => {
     res.render("register", {});
   });
 
-  //registers a new user
+  // registers a new user
   app.post("/register", (req, res) => {
     var { firstname, lastname, email, password, password2 } = req.body;
     let errors = [];
@@ -144,7 +144,7 @@ module.exports = function(app) {
     }
   });
 
-  //Authenitcates user
+  // Authenticates user
   app.post("/login", (req, res, next) => {
     passport.authenticate("local", {
       successRedirect: "/dashboard",
@@ -153,7 +153,7 @@ module.exports = function(app) {
     })(req, res, next);
   });
 
-  //logs out user
+  // logs out user
   app.get("/logout", (req, res) => {
     req.logout();
     req.flash("success_msg", "You are now logged out");

@@ -16,6 +16,7 @@ module.exports = function(app) {
     var { rxNum, rxName } = req.body;
     let error = "";
 
+    //checks if fields were blank
     if (!rxNum || !rxName) {
       error = "Please fill in all fields";
       req.flash("error_msg", error);
@@ -28,6 +29,7 @@ module.exports = function(app) {
         }
       }).then(med => {
         if (med) {
+          //errors if med already exists
           error = "You already have that medication listed";
           req.flash("error_msg", error);
           res.redirect("/dashboard");
@@ -37,7 +39,7 @@ module.exports = function(app) {
             rxNum,
             UserId: req.params.id
           });
-
+          //adds med to DB
           newMed
             .save()
             .then(() => {

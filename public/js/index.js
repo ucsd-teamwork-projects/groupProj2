@@ -1,4 +1,5 @@
 $(function() {
+  //click event when selecting a drug from the type ahead
   $(document).on("click", ".medResult", function() {
     $("#rxName").val($(this).attr("data-rxName"));
     $("#rxNum").val($(this).attr("data-rxNum"));
@@ -6,6 +7,7 @@ $(function() {
     $("html, body").animate({ scrollTop: 0 }, "fast");
   });
 
+  //click event for deletes meds
   $(document).on("click", ".delete-med", function() {
     var id = $(this).attr("data-id");
     $.ajax({
@@ -17,6 +19,7 @@ $(function() {
     });
   });
 
+  //click event displays for RxNum btn to display more med info
   $(document).on("click", ".rxNum", function() {
     var rxNum = $(this).attr("data-rx");
     console.log(rxNum);
@@ -49,6 +52,7 @@ $(function() {
     });
   });
 
+  //click event to clear modal when closed
   $(document).on("click", ".close-modal", function() {
     $(".modal-body").empty();
   });

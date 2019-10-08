@@ -1,11 +1,3 @@
-<style>
-	/* Define the hover highlight color for the table row */
-    .medResult:hover {
-          background-color: lightgray;
-    }
-
-</style>
-
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <div class="container">
@@ -43,11 +35,11 @@
     </div>
 
 
+    {{!-- Form to add medication --}}
     <section id="addMeds" class="bg-light" style="padding: 150px 0">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 mx-auto">
-                    {{!-- Form to add medication --}}
                     <div class="mt-2">
                         {{!-- Partial for flash messages --}}
                         {{> flashMsgs}}
@@ -71,11 +63,11 @@
             </div>
         </div>
     </section>
-
+    
+    {{!-- Table for displaying medication --}}
     <section id="yourMeds" style="padding: 150px 0">
         <div class="container">
             <div class="row">
-                {{!-- Table for displaying medication --}}
                 <div class="col-lg-10 mx-auto">
                     <h2 class="h2 pb-5">Your Current Medications</h2>
                     <table class="table table-striped">
@@ -126,6 +118,7 @@
         </div>
     </section>
 
+    {{!-- List group for displaying med interactions --}}
     <section id="medInteRx" class="bg-light" style="padding: 150px 0">
         <div class="container">
             <div class="row">
@@ -143,55 +136,18 @@
                         </div>
                         {{/each}}
                         {{/if}}
-
-                        {{!-- <a href="#" class="list-group-item list-group-item-action list-group-item-success">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1"><span class="badge badge-pill badge-secondary p-2">Drug 1<i class="fas fa-plus-circle mx-2"></i>Drug 2</span></h5>
-                                <strong>Severity: <span class="badge badge-pill badge-danger mx-1 p-2">High</span></strong>
-                            </div>
-                            <p class="my-1 px-2">This is where the description of the interaction would go. Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
-                                risus varius blandit.</p>
-                            <small class="px-2">Recommendations: Use condoms!</small>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action list-group-item-success">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1"><span class="badge badge-pill badge-secondary p-2">Drug 1<i class="fas fa-plus-circle mx-2"></i>Drug 2</span></h5>
-                                <strong>Severity: <span class="badge badge-pill badge-warning mx-1 p-2">Moderate</span></strong>
-                            </div>
-                            <p class="my-1 px-2">This is where the description of the interaction would go. Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
-                                risus varius blandit.</p>
-                            <small class="px-2">Recommendations: Use condoms!</small>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action list-group-item-success">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1"><span class="badge badge-pill badge-secondary p-2">Drug 1<i class="fas fa-plus-circle mx-2"></i>Drug 2</span></h5>
-                                <strong>Severity: <span class="badge badge-pill badge-info mx-1 p-2">Low</span></strong>
-                            </div>
-                            <p class="my-1 px-2">This is where the description of the interaction would go. Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
-                                risus varius blandit.</p>
-                            <small class="px-2">Recommendations: Use condoms!</small>
-                        </a> --}}
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-
-
-
-
-
-
     <!-- Footer -->
     <footer class="container-fluid py-5 bg-dark">
         <div class="container">
             <p class="m-0 text-center text-white">Copyright &copy; Med InteRxtions 2019</p>
         </div>
-        <!-- /.container -->
     </footer>
-
-
 </div>
 
 <script src="./js/typeAhead.js"></script>

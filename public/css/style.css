@@ -1,1 +1,4 @@
 /* Custom CSS Goes Here */
+.medResult:hover {
+    background-color: lightgray;
+}

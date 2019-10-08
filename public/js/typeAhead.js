@@ -39,6 +39,7 @@ const searchMeds = async searchText => {
 //creates the HTML to display list of matching medications names
 const outputHtml = matches => {
   if (matches.length > 0) {
+    //maps all matches and creates HTML for each typeAhead result
     const html = matches
       .map(
         match => `
@@ -54,6 +55,7 @@ const outputHtml = matches => {
       )
       .join("");
 
+    //renders typeAhead results to user
     matchlist.innerHTML = html;
   }
 };
