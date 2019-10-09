@@ -8,6 +8,23 @@
     margin-top: -6px;
   }
 
+  .card {
+    padding: 0 0;
+  }
+
+  .card-group {
+    margin: 0em 1em;
+  }
+
+  .card-footer {
+    min-height: 10em;
+    width: 100%;
+  }
+
+  Body{
+    margin-top: 5%;
+  }
+
   Body {
     background-color: rgb(54, 172, 250);
     background-repeat: no-repeat;
@@ -16,7 +33,7 @@
 </style>
 
 {{!-- NAV --}}
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar shadow fixed-top navbar-expand-lg navbar-dark bg-primary">
   <div class="container">
     <div id="logo-image">
       <img src="/images/logo.jpg" alt="logo" class="img-fluid rounded-circle">
@@ -42,7 +59,7 @@
 <br>
 <br>
 
-<div class="container">
+<div class="container shadow-lg">
   <div class="row">
     <div class="card text-center">
       {{!-- Head Photo --}}
@@ -65,7 +82,7 @@
       
       {{!-- 3 Card Info --}}
       <div class="card-group">
-        <div class="card col-12 col-lg-4">
+        <div class="card col-sm-4">
           <div class="card-body">
             <img src="/images/basicPre.jpg" class="card-img-top" alt="pre" style="height: 197px">
           </div>
@@ -75,7 +92,7 @@
               everything your taking.</p>
           </div>
         </div>
-        <div class="card col-12 col-lg-4">
+        <div class="card col-sm-4">
           <div class="card-body">
             <img src="/images/weekMeds.jpg" class="card-img-top" alt="weekly meds" style="height: 197px">
           </div>
@@ -85,14 +102,14 @@
               taking that can affect your health when mixed</p>
           </div>
         </div>
-        <div class="card col-12 col-lg-4">
+        <div class="card col-sm-4">
           <div class="card-body">
             <img src="/images/overLoad.jpg" class="card-img-top" alt="To many" style="height: 197px">
           </div>
           <div class="card-footer">
             <h5 class="card-title">To many?</h5>
             <p class="card-text">Look into home remedies. Did you know a mint leaf when eaten will calm and upset
-              stomach?</p>
+              stomach?            </p>
           </div>
         </div>
       </div>
