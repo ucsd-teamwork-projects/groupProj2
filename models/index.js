@@ -8,16 +8,24 @@ var env = process.env.NODE_ENV || "development";
 var config = require(__dirname + "/../config/config.json")[env];
 var db = {};
 
+var sequelize;
 if (config.use_env_variable) {
-  var sequelize = new Sequelize(process.env[config.use_env_variable]);
-} else {
+  sequelize = new Sequelize(process.env[config.use_env_variable]);
+} else if (env === "development") {
   require("dotenv").config();
-  var sequelize = new Sequelize(
+  sequelize = new Sequelize(
     config.database,
     // config.username,
     // config.password,
     process.env.mysqlUSER,
     process.env.mysqlPASSWD,
+    config
+  );
+} else {
+  sequelize = new Sequelize(
+    config.database,
+    config.username,
+    config.password,
     config
   );
 }

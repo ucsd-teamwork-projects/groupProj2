@@ -5,7 +5,9 @@
     "dialect": "mysql"
   },
   "test": {
-    "database": "interxtions_db",
+    "username": "root",
+    "password": "Emar1956",
+    "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false

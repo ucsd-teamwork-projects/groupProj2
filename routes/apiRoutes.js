@@ -11,6 +11,12 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/all-meds", (req, res) => {
+    db.Medication.findAll({}).then(data => {
+      res.json(data);
+    });
+  });
+
   //Add Medication to DB
   app.post("/api/add-meds/:id/:name", ensureAuthenticated, (req, res) => {
     var { rxNum, rxName } = req.body;
