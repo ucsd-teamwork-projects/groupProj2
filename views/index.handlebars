@@ -21,12 +21,12 @@
     width: 100%;
   }
 
-  Body{
-    margin-top: 5%;
+  Body {
+    margin-top: 2em;
   }
 
   Body {
-    background-color: rgb(54, 172, 250);
+    background-color: rgba(63, 170, 241, 0.76);
     background-repeat: no-repeat;
     background-size: 100%;
   }
@@ -35,13 +35,14 @@
 {{!-- NAV --}}
 <nav class="navbar shadow fixed-top navbar-expand-lg navbar-dark bg-primary">
   <div class="container">
+    <span class="navbar-brand">Check Yo Pill</span>
     <div id="logo-image">
       <img src="/images/logo.jpg" alt="logo" class="img-fluid rounded-circle">
     </div>
-    
+
     <div class="mr-auto ml-2">
       <span class="navbar-text">
-        <a>Make sure you <strong><u>know</u></strong> what you are taking!</a>
+        <a>Make sure you <strong><i>know</i></strong> what you are taking!</a>
       </span>
     </div>
     <div>
@@ -69,17 +70,31 @@
 
       {{!-- Main Info --}}
       <div class="card-body">
-        <h3 class="card-title">Good to know</h3>
-        <p class="card-text">Daily, medical professionals hand out medication to their patients without check what they
+        <h1 class="card-title">Check Yo Pill</h1>
+        <p class="card-text">
+
+          <blockquote class="blockquote">
+            <p class="mb-0">"45.8% of the U.S. population has used prescription drugs in the past 30 days."</p>
+            <footer class="blockquote-footer">Center for Disease Control and
+              Prevention,<cite title="Source Title"> May 2019</cite></footer>
+          </blockquote>
+
+          Daily, medical professionals hand out medication to their patients without check what they
           are currently on.
           The medication you receive from your primary physician could counteract or have the possibility of giving you
-          a higher chance of complication when mixed with other medication prescribed by our therapist or natural home
+          a higher chance of complication when mixed with other medication taken over-counter or prescribed by our
+          psychiatrists or natural home
           remedies.
+
           Check Your Pill (CYP) is here to ensure your medication is right for you so you can live your beautiful
-          life!</p>
+          life!
+        </p>
+        <button class="btn btn-primary mx-auto"> <a class="nav-link text-white" href="/login">Login</a></button>
+
       </div>
-      <br>
-      
+
+      <div class="row">
+      </div>
       {{!-- 3 Card Info --}}
       <div class="card-group">
         <div class="card col-sm-4">
@@ -87,9 +102,9 @@
             <img src="/images/basicPre.jpg" class="card-img-top" alt="pre" style="height: 197px">
           </div>
           <div class="card-footer">
-            <h5 class="card-title">Be careful</h5>
-            <p class="card-text">Watch what you take. Doctors just give you what they think will work not knowing
-              everything your taking.</p>
+            <h5 class="card-title">Be Careful</h5>
+            <p class="card-text">98,000 people die from Preventable Adverse Drug Reactions every month. Find out if any
+              of your physicians have commited errors.</p>
           </div>
         </div>
         <div class="card col-sm-4">
@@ -98,8 +113,8 @@
           </div>
           <div class="card-footer">
             <h5 class="card-title">Weekly Meds</h5>
-            <p class="card-text">What medication are <u>YOU</u> taking. Create an account and see what medication you are
-              taking that can affect your health when mixed</p>
+            <p class="card-text">What medication are <i>you</i> taking? Create an account to find how possible
+              interactions amongst your prescriptions.</p>
           </div>
         </div>
         <div class="card col-sm-4">
@@ -107,11 +122,11 @@
             <img src="/images/overLoad.jpg" class="card-img-top" alt="To many" style="height: 197px">
           </div>
           <div class="card-footer">
-            <h5 class="card-title">To many?</h5>
-            <p class="card-text">Look into home remedies. Did you know a mint leaf when eaten will calm and upset
-              stomach?            </p>
+            <h5 class="card-title">Too Many?</h5>
+            <p class="card-text">Look into alternative remedies. Did you know eating mint leaves will calm an upset
+              stomach?</p>
           </div>
         </div>
       </div>
       <br>
-  </div>
+    </div>
