@@ -1,41 +1,5 @@
 {{!-- Style --}}
-<style>
-  #logo-image {
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-top: -6px;
-  }
-
-  .fix-img-height {
-    height: 400px;
-  }
-
-  .card {
-    padding: 0 0;
-  }
-
-  .card-group {
-    margin: 0em 1em;
-  }
-
-  .card-footer {
-    min-height: 10em;
-    width: 100%;
-  }
-
-  Body {
-    margin-top: 2em;
-  }
-
-  Body {
-    background-color: rgba(63, 170, 241, 0.76);
-    background-repeat: no-repeat;
-    background-size: 100%;
-  }
-</style>
-
+<link href="./css/home.css" rel="stylesheet">
 {{!-- NAV --}}
 <nav class="navbar shadow fixed-top navbar-expand-lg navbar-dark bg-primary">
   <div class="container">
@@ -45,7 +9,7 @@
     </div>
 
     <div class="mr-auto ml-2">
-      <span class="navbar-text">
+      <span class="text-secondary">
         <a>Make sure you <strong><i>know</i></strong> what you are taking!</a>
       </span>
     </div>
@@ -70,6 +34,7 @@
       {{!-- Head Photo --}}
       <div class="card-header">
         <div class="bd-example">
+          <h1 id="header-text" class="card-title text-white display-1">Check Yo Pill</h1>
           <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
               <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -80,22 +45,25 @@
               <div class="carousel-item active">
                 <img src="/images/basicPre.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                  <h5>First slide label</h5>
-                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                  <h5>Practice Caution!</h5>
+                  <p>98,000 people die from Preventable Adverse Drug Reactions every month. Find out if any
+                    of your physicians have commited errors.</p>
                 </div>
               </div>
               <div class="carousel-item">
                 <img src="/images/weekMeds.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                  <h5>Second slide label</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <h5>Weekly Meds.</h5>
+                  <p>What medications are <i>you</i> taking? Create an account today and find possible
+                    interactions amongst your prescriptions.</p>
                 </div>
               </div>
               <div class="carousel-item">
                 <img src="/images/overLoad.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
-                  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                  <h5>Too Many?</h5>
+                  <p>Look into alternative remedies. Did you know eating mint leaves will calm an upset
+                    stomach?</p>
                 </div>
               </div>
             </div>
@@ -112,34 +80,31 @@
       </div>
 
       {{!-- Main Info --}}
-      <div class="card-body">
-        <h1 class="card-title">Check Yo Pill</h1>
-        <p class="card-text">
-
+      <div>
+        <div class="card-body">
           <blockquote class="blockquote">
             <p class="mb-0">"45.8% of the U.S. population has used prescription drugs in the past 30 days."</p>
             <footer class="blockquote-footer">Center for Disease Control and
               Prevention,<cite title="Source Title"> May 2019</cite></footer>
           </blockquote>
+          <p>
+            Daily, medical professionals hand out prescriptions to their patients. Use our services to put more power
+            into your hands.
+            Here we offer a service that is simple, easy to use, and provides straight-forward information of how the
+            medicine you take affects your body.
 
-          Daily, medical professionals hand out medication to their patients without check what they
-          are currently on.
-          The medication you receive from your primary physician could counteract or have the possibility of giving you
-          a higher chance of complication when mixed with other medication taken over-counter or prescribed by our
-          psychiatrists or natural home
-          remedies.
 
-          Check Your Pill (CYP) is here to ensure your medication is right for you so you can live your beautiful
-          life!
-        </p>
-        <button class="btn btn-info btn-lg mx-auto">
-          <a class="nav-link text-white" href="/login">Login</a>
-        </button>
-
+            Check Your Pill is here to ensure your medication is right for you, so you can live your beautiful
+            life!
+          </p>
+          <button class="btn btn-info btn-lg mx-auto">
+            <a class="nav-link text-white" href="/login">Get Started Now</a>
+          </button>
+        </div>
       </div>
 
       {{!-- 3 Card Info --}}
-      <div class="card-group" style="display:none">
+      {{!-- <div class="card-group" style="display:none">
         <div class="card col-sm-4">
           <div class="card-body">
             <img src="/images/basicPre.jpg" class="card-img-top" alt="pre" style="height: 197px">
@@ -170,6 +135,7 @@
               stomach?</p>
           </div>
         </div>
-      </div>
-      <br>
+      </div> --}}
     </div>
+  </div>
+</div>
