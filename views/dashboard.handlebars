@@ -104,7 +104,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="modalTitle"></h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -125,18 +125,36 @@
                 <div class="col-lg-10 mx-auto">
                     <h2 class="mb-3">Your Med InteRxtions</h2>
                     <div class="list-group">
-                        {{#if interxtionTypes}}
-                        {{#each interxtionTypes}}
+                        {{#if oncHighInteractions}}
+                        {{#each oncHighInteractions}}
                         <div href="#" class="list-group-item list-group-item-action list-group-item-success">
                             <div class="d-flex w-100 justify-content-between bg-secondary p-2 text-white rounded-lg">
                                 <h5 class="mb-1">
                                     {{!-- <span class="badge badge-pill badge-secondary p-2"> --}}
-                                        {{this.minConcept.[0].name}}<i class="fas fa-plus-circle mx-2"></i>{{this.minConcept.[1].name}}
+                                        {{this.interactionPair.[0].interactionConcept.[0].sourceConceptItem.name}}<i class="fas fa-plus-circle mx-2"></i>{{this.interactionPair.[0].interactionConcept.[1].sourceConceptItem.name}}
                                     {{!-- </span> --}}
                                 </h5>
                             </div>
                             <p class="my-1 px-2">{{this.interactionPair.[0].description}}</p>
-                            <p class="px-2"><strong>Severity: </strong><span class="badge badge-pill badge-danger mx-1 p-2">N/A</span></p>
+                            <p class="px-2"><strong>Severity: </strong><span class="badge badge-pill badge-danger mx-1 p-2">{{this.interactionPair.[0].severity}}</span></p>
+                            <small class="mx-2">Source: ONCHigh</small>
+                        </div>
+                        {{/each}}
+                        {{/if}}
+
+                        {{#if drugbankInteractions}}
+                        {{#each drugbankInteractions}}
+                        <div href="#" class="list-group-item list-group-item-action list-group-item-success">
+                            <div class="d-flex w-100 justify-content-between bg-secondary p-2 text-white rounded-lg">
+                                <h5 class="mb-1">
+                                    {{!-- <span class="badge badge-pill badge-secondary p-2"> --}}
+                                        {{this.interactionPair.[0].interactionConcept.[0].sourceConceptItem.name}}<i class="fas fa-plus-circle mx-2"></i>{{this.interactionPair.[0].interactionConcept.[1].sourceConceptItem.name}}
+                                    {{!-- </span> --}}
+                                </h5>
+                            </div>
+                            <p class="my-1 px-2">{{this.interactionPair.[0].description}}</p>
+                            <p class="px-2"><strong>Severity: </strong><span class="badge badge-pill badge-danger mx-1 p-2">{{this.interactionPair.[0].severity}}</span></p>
+                            <small class="mx-2">Source: DrugBank</small>
                         </div>
                         {{/each}}
                         {{/if}}

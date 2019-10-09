@@ -35,13 +35,25 @@ module.exports = function(app) {
         )
         .then(response => {
           if ("fullInteractionTypeGroup" in response.data) {
-            res.render("dashboard", {
-              name: req.user.firstname,
-              id: req.user.id,
-              meds: meds,
-              interxtionTypes:
-                response.data.fullInteractionTypeGroup[0].fullInteractionType
-            });
+            if (response.data.fullInteractionTypeGroup.length > 1) {
+              res.render("dashboard", {
+                name: req.user.firstname,
+                id: req.user.id,
+                meds: meds,
+                drugbankInteractions:
+                  response.data.fullInteractionTypeGroup[0].fullInteractionType,
+                oncHighInteractions:
+                  response.data.fullInteractionTypeGroup[1].fullInteractionType
+              });
+            } else {
+              res.render("dashboard", {
+                name: req.user.firstname,
+                id: req.user.id,
+                meds: meds,
+                drugbankInteractions:
+                  response.data.fullInteractionTypeGroup[0].fullInteractionType
+              });
+            }
           } else {
             res.render("dashboard", {
               name: req.user.firstname,
