@@ -2,3 +2,11 @@
 .medResult:hover {
     background-color: lightgray;
 }
+
+.bg-dark {
+    background-color: #323e4f !important;
+}
+
+.bg-blue {
+    background-color: #88bff0 !important;
+}

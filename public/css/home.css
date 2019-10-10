@@ -1,0 +1,41 @@
+  #logo-image {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-top: -6px;
+  }
+
+  #header-text {
+      position: absolute;
+      top: 0.5em;
+      left: 0;
+      right: 0;
+      margin: auto;
+      z-index: 99;
+      text-shadow: -1px 3px 17px rgba(0, 0, 0, 0.67);
+  }
+
+  .fix-img-height {
+      height: 400px;
+  }
+
+  .card {
+      padding: 0 0;
+  }
+
+  .card-group {
+      margin: 0em 1em;
+  }
+
+  .card-footer {
+      min-height: 10em;
+      width: 100%;
+  }
+
+  Body {
+      margin-top: 2em;
+      background-color: rgba(63, 170, 241, 0.76);
+      background-repeat: no-repeat;
+      background-size: 100%;
+  }
