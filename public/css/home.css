@@ -33,9 +33,16 @@
       width: 100%;
   }
 
-  Body {
+  body {
       margin-top: 2em;
       background-color: rgba(63, 170, 241, 0.76);
       background-repeat: no-repeat;
       background-size: 100%;
   }
+
+/* Extra small devices (phones, 780 and down) */
+@media only screen and (max-width: 780px) {
+    .navbar-phrase{
+        display: none;
+    }
+}

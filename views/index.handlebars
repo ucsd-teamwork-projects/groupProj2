@@ -3,36 +3,41 @@
 {{!-- NAV --}}
 <nav class="navbar shadow fixed-top navbar-expand-lg navbar-dark bg-primary">
   <div class="container">
-    <span class="navbar-brand">Check Yo Pill</span>
-    <div id="logo-image">
-      <img src="/images/logo.jpg" alt="logo" class="img-fluid rounded-circle">
-    </div>
+    <div id="logo col-9">
+      <span class="navbar-brand">Check Yo Pill</span>
+      
+      <img id="logo-image" src="/images/logo.jpg" alt="logo" class="img-fluid rounded-circle">
 
-    <div class="mr-auto ml-2">
-      <span class="text-secondary">
+      <span class="text-secondary navbar-phrase ml-2">
         <a>Make sure you <strong><i>know</i></strong> what you are taking!</a>
       </span>
     </div>
-    <div>
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="/login">Login</a></button>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/register">Register</a>
-        </li>
-      </ul>
+    
+    <div id="menu col-3">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a></button>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/register">Register</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </nav>
 
 <div class="container shadow-lg">
   <div class="row">
-    <div class="card text-center">
+    <div class="card text-center mt-5">
       {{!-- Head Photo --}}
       <div class="card-header">
         <div class="bd-example">
-          <h1 id="header-text" class="card-title text-white display-1">Check Yo Pill</h1>
+          <h1 id="header-text" class="card-title text-white h1">Check Yo Pill</h1>
           <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
               <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
