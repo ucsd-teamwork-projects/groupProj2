@@ -1,19 +1,77 @@
-* **The requirements for Project #2 are as follows:**
+# CHECK YO PILL
 
-  * Must use a Node and Express Web Server
+------
 
-  * Must be backed by a MySQL Database with a Sequelize ORM  
+##INTRODUCTION
 
-  * Must have both GET and POST routes for retrieving and adding new data
+Full-Stack Application designed to check for Adverse Reactions between prescribed medicine.
 
-  * Must be deployed using Heroku (with Data)
+Features the following technologies to deliver our Five Concepts: 
 
-  * Must utilize at least one new library, package, or technology that we haven’t discussed
+- Node.js
+- Express
+- Handlebars
+- Passport
+- MySQL
+- Sequelize
+- Travis CI
+- Mocha
+- Bootstrap
 
-  * Must have a polished frontend / UI 
 
-  * Must have folder structure that meets MVC Paradigm
 
-  * Must meet good quality coding standards (indentation, scoping, naming)
+##FIVE CONCEPTS
 
-  * Must not expose sensitive API key information on the server, see [Protecting-API-Keys-In-Node.md](../../../../01-Class-Content/10-nodejs/03-Supplemental/Protecting-API-Keys-In-Node.md)
+1. Responsive Landing Page
+2. Interactive User Dashboard
+3. Passport-based SSL Authorization
+4. Active RESTful API Implementation
+5. U.S. NIH-Certified Medical Information
+
+
+
+####1.  RESPONSIVE LANDING PAGE
+
+![1](./readme-assets/img/1.png)
+
+Features Image Carousel and written introduction.
+
+
+
+
+
+####2.   INTERACTIVE USER DASHBOARD
+
+![4](./readme-assets/img/4.png)
+
+Add Medication finds the user's prescription with proper dosage, and provides RxUI Number to reference.
+
+
+
+![5](./readme-assets/img/6.png)
+
+Lists all user's prescriptions.
+
+
+
+![5](./readme-assets/img/5.png)
+
+Finally, possible interactions are displayed.
+
+
+
+#### 3.  PASSPORT-BASED SSL AUTHORIZATION
+
+Passport's Authorization code is embedded as a Node Package Module to provide password protection for the user's account.
+
+
+
+#### 4.  ACTIVE RESTFUL API IMPLEMENTATION
+
+Custom API's were written using REST standards, implementing methods like GET and POST to send data from our server's to the clients browser.
+
+
+
+#### 5.  U.S. NIH-Certified Medical Information
+
+The statements we use are pulled from the U.S. National Insitute of Health's databases using their RxNorm API.
