@@ -40,7 +40,7 @@ Features Image Carousel and written introduction.
 
 
 
-#### x2.   INTERACTIVE USER DASHBOARD
+#### 2.   INTERACTIVE USER DASHBOARD
 
 ![4](./readme-assets/img/4.png)
 
