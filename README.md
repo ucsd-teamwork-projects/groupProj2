@@ -2,7 +2,7 @@
 
 ------
 
-##INTRODUCTION
+## INTRODUCTION
 
 Full-Stack Application designed to check for Adverse Reactions between prescribed medicine.
 
@@ -20,7 +20,7 @@ Features the following technologies to deliver our Five Concepts:
 
 
 
-##FIVE CONCEPTS
+## FIVE CONCEPTS
 
 1. Responsive Landing Page
 2. Interactive User Dashboard
@@ -30,7 +30,7 @@ Features the following technologies to deliver our Five Concepts:
 
 
 
-####1.  RESPONSIVE LANDING PAGE
+#### 1.  RESPONSIVE LANDING PAGE
 
 ![1](./readme-assets/img/1.png)
 
@@ -40,7 +40,7 @@ Features Image Carousel and written introduction.
 
 
 
-####2.   INTERACTIVE USER DASHBOARD
+#### x2.   INTERACTIVE USER DASHBOARD
 
 ![4](./readme-assets/img/4.png)
 
